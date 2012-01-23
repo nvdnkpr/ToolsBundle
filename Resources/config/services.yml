@@ -1,0 +1,6 @@
+parameters:
+    coil.tools.debug.class: COil\ToolsBundle\Lib\Debug
+
+services:
+    coil.tools.debug:
+        class:     %coil.tools.debug.class%
