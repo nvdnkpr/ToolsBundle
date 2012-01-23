@@ -52,7 +52,7 @@ The bundle registers one service:
 Note that Doctrine objects are automatically detected.
   * `dumpConsole()`: Same function as dump() but more suitable and readable for a console debug.
 
-### `dump()`:
+### dump():
 
 This function accepts 5 parameters, only the first one is mandatory:
 
@@ -247,8 +247,7 @@ TODO
 Credits
 -------
 
-COil\ToolsBundle has been developed by [COil][COil].
-
-[My symfony blog]: http://www.strangebuzz.com
-[Strangebuzz git][strangebuzz]
-[The symfony1 plugin]: http://www.symfony-project.org/plugins/sfToolsPlugin
+* COil\ToolsBundle has been developed by [COil](https://github.com/COil).
+* [My symfony blog](http://www.strangebuzz.com)
+* [Strangebuzz git](https://github.com/Strangebuzz)
+* [The symfony1 plugin](http://www.symfony-project.org/plugins/sfToolsPlugin)
