@@ -1,5 +1,5 @@
 {
-    "name": "COil/tools-bundle",
+    "name": "coil/tools-bundle",
     "type": "symfony-bundle",
     "description": "The COil/ToolsBundle provides some tools and debugging functions for #Symfony2",
     "keywords": ["tools", "debug", "doctrine", "dump", "help"],
