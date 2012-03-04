@@ -44,7 +44,9 @@ Finally, you can enable it in your kernel:
 Usage
 -----
 
-The bundle registers one service:
+The bundle registers 2 service:
+
+### The `debug` service:
 
  - the `coil.tools.debug` service allows you to dump and debug Doctrine entities, collections and variables.
 
@@ -52,7 +54,7 @@ The bundle registers one service:
 Note that Doctrine objects are automatically detected.
   * `dumpConsole()`: Same function as dump() but more suitable and readable for a console debug.
 
-### dump():
+#### dump():
 
 This function accepts 5 parameters, only the first one is mandatory:
 
@@ -60,9 +62,9 @@ This function accepts 5 parameters, only the first one is mandatory:
 * `$name`: Name of the var to dump (optional, default 'var')
 * `$die`: Tells the function to stop the process or not (optional, default: 'false')
 * `$maxDepth`: Max depth allowed when debugging objects (optional, default: 2)
-* `$returnBuffer`: Boolean Tells if the debug must be returned as a string (optional, default: false)
+* `$returnBuffer`: Boolean that tells if the debug must be returned as a string (optional, default: false)
 
-#### Example 1:
+##### Example 1:
 
 In your controller:
 
@@ -107,7 +109,7 @@ Will output and die:
     » class    : COil\Jobeet2Bundle\Controller\HomeController
     » function : indexAction
 
-#### Example 2:
+##### Example 2:
 
 Same as 1) but with a depth of 1:
 
@@ -130,7 +132,7 @@ Will output and die:
     » class    : COil\Jobeet2Bundle\Controller\HomeController
     » function : indexAction
 
-#### Example 3:
+##### Example 3:
 
 This time we will use a maxDepth of 3, the function will not die but will return the output
 
@@ -141,7 +143,7 @@ $debug = $this->get('coil.tools.debug')->dump($categories, '$categories', false,
 
 The `$debug` variable will contain:
 
-$categories :
+$categories:
 
     array
       0 =>
@@ -232,8 +234,88 @@ protected function dump($var, $name = 'var', $die = false, $maxDepth = 2, $retur
 $this->dump($categories, '$categories', true);
 ```
 
+### The `timer` service:
+
+ - the `coil.tools.timer` service allows you to measure code performance on the fly.
+
+  * `start(')`: Starts a timer
+  * `stop()`: Stops a timer
+  * `getTime()`: Returns the elapsed time between the start and end time references of a timer
+  * `clear()`: Clears all the existing timers
+  * `all()`: Returns the timers array
+
+#### start():
+
+Start the timer:
+
+``` php
+<?php
+$this->get('coil.tools.timer')->start();
+```
+
+Or you can pass a name for the timer:
+
+``` php
+<?php
+$this->get('coil.tools.timer')->start('myTimer');
+```
+
+#### stop():
+
+Stops the timer:
+
+``` php
+<?php
+$this->get('coil.tools.timer')->stop();
+```
+
+Or with a timer name:
+
+``` php
+<?php
+$this->get('coil.tools.timer')->stop('myTimer');
+```
+
+#### getTime():
+
+Returns the elapsed time between the start and end time references of a timer.
+
+``` php
+<?php
+$time = $this->get('coil.tools.timer')->getTime();
+echo $time. ' second(s)';
+```
+
+(or `->getTime('myTimer')`)
+
+Will output:
+
+    0.0012 second(s)
+
+#### clear():
+
+Clears all the existing timers.
+
+#### all():
+
+Returns the timers array.
+
+
+Tips
+----
+
+Note that you don't have to call the `stop()` function, it will be automatically
+called by the `getTime()` one if it was not called before. If you call `getTime()`
+and the timer was not started, an exception will be raised.
+
+
 Changelog
 ---------
+
+**2012-03-04**
+
+* Added the timer class
+* Added unit tests for the timer service
 
 **2012-01-23**
 
@@ -248,6 +330,6 @@ Credits
 -------
 
 * COil\ToolsBundle has been developed by [COil](https://github.com/COil).
-* [My symfony blog](http://www.strangebuzz.com)
+* [My Symfony blog](http://www.strangebuzz.com)
 * [Strangebuzz git](https://github.com/Strangebuzz)
-* [The symfony1 plugin](http://www.symfony-project.org/plugins/sfToolsPlugin)
+* [The original symfony1 plugin](http://www.symfony-project.org/plugins/sfToolsPlugin)

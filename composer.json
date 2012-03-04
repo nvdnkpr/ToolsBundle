@@ -1,8 +1,8 @@
 {
     "name": "coil/tools-bundle",
     "type": "symfony-bundle",
-    "description": "The COil/ToolsBundle provides some tools and debugging functions for #Symfony2",
-    "keywords": ["tools", "debug", "doctrine", "doctrine2", "dump", "help", "symfony", "symfony2"],
+    "description": "The 'COil/ToolsBundle' provides some tools and debugging functions for #Symfony2",
+    "keywords": ["tools", "debug", "doctrine", "doctrine2", "dump", "help", "symfony", "Symfony2"],
     "license": "MIT",
     "authors": [
         {

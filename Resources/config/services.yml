@@ -1,6 +1,9 @@
 parameters:
     coil.tools.debug.class: COil\ToolsBundle\Lib\Debug
+    coil.tools.timer.class: COil\ToolsBundle\Lib\Timer
 
 services:
     coil.tools.debug:
         class:     %coil.tools.debug.class%
+    coil.tools.timer:
+        class:     %coil.tools.timer.class%
