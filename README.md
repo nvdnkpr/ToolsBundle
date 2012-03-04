@@ -238,7 +238,7 @@ $this->dump($categories, '$categories', true);
 
  - the `coil.tools.timer` service allows you to measure code performance on the fly.
 
-  * `start(')`: Starts a timer
+  * `start()`: Starts a timer
   * `stop()`: Stops a timer
   * `getTime()`: Returns the elapsed time between the start and end time references of a timer
   * `clear()`: Clears all the existing timers

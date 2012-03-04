@@ -14,7 +14,7 @@ use COil\ToolsBundle\Lib\Timer;
 class TimerTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @covers COil\ToolsBundle\Lib\Timer::__construct
+     * @covers COil\ToolsBundle\Lib\Timer::all
      */
     public function testConstruct()
     {
@@ -23,7 +23,9 @@ class TimerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers COil\ToolsBundle\Lib\Timer::start()
+     * @covers COil\ToolsBundle\Lib\Timer::start
+     * @covers COil\ToolsBundle\Lib\Timer::stop
+     * @covers COil\ToolsBundle\Lib\Timer::getTime
      */
     public function testStartWithoutArgument()
     {
@@ -41,7 +43,10 @@ class TimerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers COil\ToolsBundle\Lib\Timer::all()
+     * @covers COil\ToolsBundle\Lib\Timer::all
+     * @covers COil\ToolsBundle\Lib\Timer::start
+     * @covers COil\ToolsBundle\Lib\Timer::stop
+     * @covers COil\ToolsBundle\Lib\Timer::getTime
      */
     public function testAll()
     {
@@ -62,7 +67,10 @@ class TimerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers COil\ToolsBundle\Lib\Timer::clear()
+     * @covers COil\ToolsBundle\Lib\Timer::clear
+     * @covers COil\ToolsBundle\Lib\Timer::start
+     * @covers COil\ToolsBundle\Lib\Timer::getTime
+     * @covers COil\ToolsBundle\Lib\Timer::all
      */
     public function testClear()
     {
@@ -83,7 +91,7 @@ class TimerTest extends \PHPUnit_Framework_TestCase
     /**
      * Get time raise an exception if the timer was not started.
      *
-     * @covers COil\ToolsBundle\Lib\Timer::getTime()
+     * @covers COil\ToolsBundle\Lib\Timer::getTime
      * @expectedException \RuntimeException
      */
     public function testGetTimeException()
@@ -96,7 +104,7 @@ class TimerTest extends \PHPUnit_Framework_TestCase
     /**
      * stop raise an exception if the timer was not started.
      *
-     * @covers COil\ToolsBundle\Lib\Timer::stop()
+     * @covers COil\ToolsBundle\Lib\Timer::stop
      * @expectedException \RuntimeException
      */
     public function testStopException()
