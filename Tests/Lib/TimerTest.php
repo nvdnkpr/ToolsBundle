@@ -113,4 +113,17 @@ class TimerTest extends \PHPUnit_Framework_TestCase
         $timer = new Timer();
         $time = $timer->stop('myTimer');
     }
+
+    /**
+     * stop() raises an exception if the timer was not started.
+     *
+     * @covers COil\ToolsBundle\Lib\Timer::stop
+     * @expectedException \RuntimeException
+     */
+    public function testGetTimeExceptionAfterASecondStart()
+
+    {
+        $timer = new Timer();
+        $timer->stop();
+    }
 }

@@ -16,6 +16,7 @@ class Timer
      */
     public function start($name = 'default')
     {
+        unset($this->timers[$name]['end']);
         $this->timers[$name]['start'] = $this->getMicroTimeNow();
     }
 
