@@ -6,6 +6,9 @@ useful to debug Doctrine entities or collections.
 
 ----
 
+[![Travis build Status](https://secure.travis-ci.org/COil/ToolsBundle.png)](http://travis-ci.org/COil/ToolsBundle)
+
+
 Installation
 ------------
 
