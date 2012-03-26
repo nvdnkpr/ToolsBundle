@@ -57,17 +57,18 @@ class Debug
     }
 
     /**
-     * Same function as dump but more suitable for console debug.
+     * Same function as dump but more suitable for console debug, does not detect
+     * Doctrine entities.
      *
      * @see dump()
      * @return string|null
      */
-    public function dumpConsole($var, $name = 'var',  $maxDepth = 2, $die = false, $returnBuffer = false)
+    public function dumpConsole($var, $name = 'var: ', $die = false, $returnBuffer = false)
     {
         ob_start();
-        print($name . ' : >');
-        DoctrineDebug::dump($var, $maxDepth);
-        print('<'. PHP_EOL);
+        echo $name. ': >';
+        print_r($var);
+        echo '<';
 
         $buffer = ob_get_contents();
         ob_end_clean();
